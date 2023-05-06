@@ -44,5 +44,26 @@ function criaElemento(item) {
 
     novoItem.innerHTML += item.nome
 
+    novoItem.appendChild(botãoDelete());
+
     lista.appendChild(novoItem)
+}
+
+function atualizaElemento(item){
+    document.querySelector(" [data-id='"+item.id+"']").innerHTML = item.quantidade
+}
+
+function botãoDelete (){
+    const elementoBotao = document.createElement("button")
+    elementoBotao.innerText = "DELETE"
+
+    elementoBotao.addEventListener("click", function(){
+        deleteElemento(this.parentNode)
+    })
+
+    return  elementoBotao
+}
+
+function  deleteElemento(tag){
+    tag.remove()
 }
