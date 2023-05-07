@@ -1,5 +1,5 @@
-const form = document.getElementById("novoItem");
-const lista = document.getElementById("lista");
+const form = document.getElementById("novoItem")
+const lista = document.getElementById("lista")
 const itens = JSON.parse(localStorage.getItem("itens")) || []
 
 itens.forEach( (elemento) => {
@@ -61,7 +61,7 @@ function atualizaElemento(item) {
 
 function botaoDeleta(id) {
     const elementoBotao = document.createElement("button")
-    elementoBotao.innerText = "DELETE"
+    elementoBotao.innerText = "X"
 
     elementoBotao.addEventListener("click", function() {
         deletaElemento(this.parentNode, id)
